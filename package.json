@@ -1,0 +1,15 @@
+{
+  "name": "rest_framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "author": "Ryan Raeburn <ryanraeburn@gmail.com>",
+  "license": "MIT"
+}
