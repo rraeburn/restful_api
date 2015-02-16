@@ -16,7 +16,7 @@ var server = http.createServer(function(req, res) {
     requestRoutes[req.method](req, res, fileName);
   } else {
     res.writeHead(404, {
-      'Content-Type': 'text/html'
+      'Content-Type': 'text/plain'
     });
     res.write('page not found');
     res.end();
@@ -32,10 +32,6 @@ App.prototype.addResource = function(route) {
 };
 
 module.exports = new App();
-
-//issues  - allows post to any resource
-//get works for any localhost:3000/# - no need for pathname
-//delete can delete item, but crashes server
 
 //ADD 
 //tests 
