@@ -9,12 +9,10 @@ var http = require('http'),
 var server = http.createServer(function(req, res) {
   var fullPath = url.parse(req.url).pathname,
       fileStart = Number(fullPath.lastIndexOf('/')) +1,
-      firstSlash = fullPath.indexOf('/'),
-      lastSlash = fullPath.lastIndexOf('/'),
-      path = fullPath.substr(firstSlash, lastSlash),
+      path = req.url.split('/')[1],
       fileName = fullPath.substr(fileStart, fullPath.length) + '.json';
 
-  if(routes.indexOf(path)) {
+  if(routes.indexOf(path) !== -1) {
     requestRoutes[req.method](req, res, fileName);
   } else {
     res.writeHead(404, {
@@ -33,10 +31,13 @@ App.prototype.addResource = function(route) {
   routes.push(route);
 };
 
-routes.push('dog');
-
 module.exports = new App();
 
 //issues  - allows post to any resource
 //get works for any localhost:3000/# - no need for pathname
+//delete can delete item, but crashes server
 
+//ADD 
+//tests 
+//gruntfile
+//patch
