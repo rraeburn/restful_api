@@ -33,7 +33,3 @@ App.prototype.addResource = function(route) {
 
 module.exports = new App();
 
-//ADD 
-//tests 
-//gruntfile
-//patch
